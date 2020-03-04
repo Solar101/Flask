@@ -1,9 +1,9 @@
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect, render_template
 
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/index')
 def index():
     user_agent = request.headers.get('User-Agent')
     return '<p>Your brouser is %s' % user_agent, 400 # подменяем код состояния на '400' :TEST
